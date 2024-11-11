@@ -9,7 +9,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/profiles', [ProfileController::class, 'index'])->name('profiles.index');
-Route::get('/users/{id}/profile', [UserController::class, 'showProfile'])->name('users.profile');
-Route::get('/users/{id}/courses', [UserController::class, 'showCourses'])->name('users.courses');
-Route::get('/courses/{id}/users', [CourseController::class, 'showUsers'])->name('courses.users');
+Route::get('/users', [UserController::class, 'showAllUsers'])->name('showAllUsers');
+Route::get('/profile/{id}', [ProfileController::class, 'showProfiles'])->name('showProfiles');
+Route::get('/users/{id}/profile', [UserController::class, 'showProfile'])->name('showProfile');
+Route::get('/users/{id}/courses', [UserController::class, 'showCourses'])->name('showCourses');
+Route::get('/courses/{id}/users', [CourseController::class, 'showUsers'])->name('showUsers');

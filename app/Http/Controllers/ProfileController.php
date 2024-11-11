@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-    public function index() {
+    public function showProfiles() {
 
     $profiles = Profile::with('user')->get(); 
     return view('profiles', compact('profiles'));
